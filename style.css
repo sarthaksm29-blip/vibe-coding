@@ -1,0 +1,264 @@
+:root {
+    --color-bg-light: #FFFDF6;
+    --color-bg-section: #FAF6E9;
+    --color-accent-light: #DDEB9D;
+    --color-accent-primary: #A0C878;
+    --color-text-dark: #2C2C2C;
+    --color-text-muted: #555555;
+    --color-brand-magenta: #900C3F;
+
+    --font-heading: 'Rozha One', serif;
+    --font-body: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Background Animation Layer */
+#sky-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    /* Subtle gradient for day sky feel */
+    background: linear-gradient(to bottom, #EFFBF9 0%, var(--color-bg-light) 100%);
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centered for this design */
+}
+
+.logo-img {
+    height: 80px;
+    /* Adjust size as needed */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Hero Section */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1rem 2rem;
+    /* Added top padding for fixed nav space if needed */
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--color-brand-magenta);
+    text-shadow: none;
+}
+
+.hero-subtext {
+    font-size: 1.3rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+/* Buttons */
+.cta-button {
+    background: linear-gradient(135deg, var(--color-accent-primary), #8AB560);
+    color: white;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(160, 200, 120, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(160, 200, 120, 0.6);
+}
+
+/* Sections */
+.section-padding {
+    padding: 6rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--color-text-dark);
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent-light);
+    margin: 1.2rem auto;
+    border-radius: 2px;
+}
+
+.section-desc {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+}
+
+/* About Section */
+#about {
+    background-color: var(--color-bg-section);
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Very subtle border */
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(160, 200, 120, 0.15);
+    border-color: var(--color-accent-light);
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    color: var(--color-brand-magenta);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: var(--color-text-dark);
+}
+
+.card-detail {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Footer */
+footer {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: var(--color-bg-section);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Kites Animation Styles */
+.kite {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    /* Default color, overridden by JS */
+    background: var(--color-accent-primary);
+    transform: rotate(45deg);
+    opacity: 0.9;
+    z-index: 1;
+    pointer-events: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Tail of the kite */
+.kite::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 18px solid var(--color-accent-light);
+    /* Lighter tail */
+    transform: rotate(-45deg);
+    transform-origin: top left;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
